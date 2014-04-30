@@ -1,0 +1,168 @@
+RC51 COMPILER V03.03.40,  MOVIMENTO               09/30/13  20:42:38  PAGE  1
+
+QCW(0x00002F32)
+
+WIN32 RC51 COMPILER V03.03.40, COMPILATION OF MODULE MOVIMENTO 
+OBJECT MODULE PLACED IN q:\robo\oficial\headers\movimento.obj
+COMPILER INVOKED BY: RC51.EXE Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.H OBJECT(Q:\ROBO
+            -\OFICIAL\HEADERS\MOVIMENTO.OBJ) PIN(C:\RIDE\INC;C:\RIDE\INC\51) PIN
+            -(C:\RIDE\INC\51\) NOAM PR(Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.LST) CD
+            - SB OE(1) SM FP(NOFLOAT) PW(80) NOIS UNSIGNEDCHAR ET(CHAR) 
+
+stmt level    source
+   1          void mover(char direcao){
+   2   1           
+   3   1           switch(direcao){
+   4   2               case 'F':
+   5   2                   motorDireito(1);
+
+WARNING C090 IN LINE 5 OF movimento.h : Call to function 'motorDireito' without
+            - prototype
+
+WARNING C183 IN LINE 5 OF movimento.h : 'motorDireito': function definition req
+            -uires ANSI style parameter list
+   6   2                   motorEsquerdo(1);
+
+WARNING C090 IN LINE 6 OF movimento.h : Call to function 'motorEsquerdo' withou
+            -t prototype
+
+WARNING C183 IN LINE 6 OF movimento.h : 'motorEsquerdo': function definition re
+            -quires ANSI style parameter list
+   7   2                   break;
+   8   2               case 'T':
+   9   2                   motorDireito(0);
+  10   2                   motorEsquerdo(0);
+  11   2                   break;
+  12   2           
+  13   2           }
+  14   1           
+  15   1      }
+  16          void girar(char sentido){
+  17   1          
+  18   1          switch(sentido){
+  19   2          
+  20   2              case 'E':
+  21   2                   motorDireito(0);
+  22   2                   motorEsquerdo(1);
+  23   2                   break;
+  24   2              case 'D':
+  25   2                   motorDireito(1);
+  26   2                   motorEsquerdo(0);
+  27   2                   break;
+  28   2                          
+  29   2          }
+  30   1               
+  31   1      }
+  32          
+RC51 COMPILER V03.03.40,  MOVIMENTO               09/30/13  20:42:38  PAGE  2
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+            ; FUNCTION _mover (BEGIN)
+                                           ; SOURCE LINE # 1 
+0000 8F00    R      MOV    direcao,R7
+                                           ; SOURCE LINE # 3 
+0002 E500    R      MOV    A,direcao
+0004 24BA           ADD    A,#0BAH
+0006 6005           JZ     ?CASE2
+0008 24F2           ADD    A,#0F2H
+000A 6010           JZ     ?CASE3
+000C         ?LAB2:
+000C 22             RET    
+000D         ?CASE2:
+                                           ; SOURCE LINE # 5 
+000D E4             CLR    A
+000E FE             MOV    R6,A
+000F 7F01           MOV    R7,#001H
+0011 120000  R      LCALL  motorDireito
+                                           ; SOURCE LINE # 6 
+0014 E4             CLR    A
+0015 FE             MOV    R6,A
+0016 7F01           MOV    R7,#001H
+0018 120000  R      LCALL  motorEsquerdo
+                                           ; SOURCE LINE # 7 
+001B 22             RET    
+001C         ?CASE3:
+                                           ; SOURCE LINE # 9 
+001C E4             CLR    A
+001D FE             MOV    R6,A
+001E FF             MOV    R7,A
+001F 120000  R      LCALL  motorDireito
+                                           ; SOURCE LINE # 10 
+0022 E4             CLR    A
+0023 FE             MOV    R6,A
+0024 FF             MOV    R7,A
+0025 120000  R      LCALL  motorEsquerdo
+                                           ; SOURCE LINE # 15 
+0028 22             RET    
+
+            ; FUNCTION _mover (END)
+
+            ; FUNCTION _girar (BEGIN)
+                                           ; SOURCE LINE # 16 
+0000 8F00    R      MOV    sentido,R7
+                                           ; SOURCE LINE # 18 
+0002 E500    R      MOV    A,sentido
+0004 24BC           ADD    A,#0BCH
+0006 6012           JZ     ?CASE6
+0008 14             DEC    A
+0009 6001           JZ     ?CASE7
+000B         ?LAB6:
+000B 22             RET    
+000C         ?CASE7:
+                                           ; SOURCE LINE # 21 
+000C E4             CLR    A
+000D FF             MOV    R7,A
+000E FE             MOV    R6,A
+000F 120000  R      LCALL  motorDireito
+                                           ; SOURCE LINE # 22 
+0012 E4             CLR    A
+0013 FE             MOV    R6,A
+0014 7F01           MOV    R7,#001H
+0016 120000  R      LCALL  motorEsquerdo
+                                           ; SOURCE LINE # 23 
+0019 22             RET    
+001A         ?CASE6:
+                                           ; SOURCE LINE # 25 
+001A E4             CLR    A
+001B FE             MOV    R6,A
+001C 7F01           MOV    R7,#001H
+001E 120000  R      LCALL  motorDireito
+                                           ; SOURCE LINE # 26 
+0021 E4             CLR    A
+0022 FE             MOV    R6,A
+0023 FF             MOV    R7,A
+0024 120000  R      LCALL  motorEsquerdo
+                                           ; SOURCE LINE # 31 
+0027 22             RET    
+
+            ; FUNCTION _girar (END)
+
+RC51 COMPILER V03.03.40,  MOVIMENTO               09/30/13  20:42:38  PAGE  3
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+mover. . . . . . . . . . . . . . . . .  PUBLIC  CODE    PROC    -----   -----
+  direcao?040. . . . . . . . . . . . .  PARAM   DATA    U_CHAR  0000H   1    
+  direcao?040. . . . . . . . . . . . .  PARAM   DATA    U_CHAR  0000H   1    
+girar. . . . . . . . . . . . . . . . .  PUBLIC  CODE    PROC    -----   -----
+  sentido?041. . . . . . . . . . . . .  PARAM   DATA    U_CHAR  0000H   1    
+  sentido?041. . . . . . . . . . . . .  PARAM   DATA    U_CHAR  0000H   1    
+motorDireito . . . . . . . . . . . . .  EXTERN  CODE    PROC    -----   -----
+motorEsquerdo. . . . . . . . . . . . .  EXTERN  CODE    PROC    -----   -----
+RC51 COMPILER V03.03.40,  MOVIMENTO               09/30/13  20:42:38  PAGE  4
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     81    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+RC51 COMPILATION COMPLETE.  4 WARNINGS,  0 ERROR

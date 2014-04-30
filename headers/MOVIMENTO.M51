@@ -1,0 +1,57 @@
+LX51 CODE BANKING LINKER/LOCATOR V05.01.27                                     09/30/13  20:42:38
+WIN32 LX51 CODE BANKING LINKER/LOCATOR V05.01.27,  INVOKED BY:
+LX51 q:\robo\oficial\headers\movimento.OBJ , q:\robo\oficial\headers\movimento.DTP TO(q:\robo\ofi&
+cial\headers\movimento.AOF) PR(q:\robo\oficial\headers\movimento.m51) XSIZE(65536) CSIZE(65536) R&
+S(256) RSI(128) IX MAP  WITHOUT ANY FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED
+  Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.OBJ(MOVIMENTO)
+  Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.DTP(_WKRDTP_)
+
+
+LINK MAP OF MODULE: Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.AOF (MOVIMENTO)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA/IDATA    M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+    DATA     0008H      0001H     OVERLAID UNIT  _DGROUP00_
+             0008H      0001H     -------------  ?DT?_mover?MOVIMENTO
+    DATA     0009H      0001H     OVERLAID UNIT  _DGROUP01_
+             0009H      0001H     -------------  ?DT?_girar?MOVIMENTO
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0029H     UNIT           ?PR?_mover?MOVIMENTO
+    CODE     0029H      0028H     UNIT           ?PR?_girar?MOVIMENTO
+
+UNRESOLVED EXTERNAL SYMBOLS
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL RAM storage requirement:  000AH (10)
+    Total EXTERNAL RAM storage requirement:  0000H (0)
+    Total     CODE     storage requirement:  0051H (81)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.AOF (MOVIMENTO)
+
+SEGMENT                           BI_GROUP            DT_GROUP             ID_GROUP             XD_GROUP
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------
+
+?PR?_mover?MOVIMENTO           ---------------     0008H    0001H      ---------------     ---------------
+
+?PR?_girar?MOVIMENTO           ---------------     0009H    0001H      ---------------     ---------------
+
+SYMBOL TABLE FOR Q:\ROBO\OFICIAL\HEADERS\MOVIMENTO.AOF(MOVIMENTO)
+------------------------------------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+
+LINK/LOCATE RUN COMPLETE, 2 ERRORS FOUND.
+

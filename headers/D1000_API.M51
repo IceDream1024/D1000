@@ -1,0 +1,423 @@
+LX51 CODE BANKING LINKER/LOCATOR V05.01.27                                     09/30/13  19:28:27
+WIN32 LX51 CODE BANKING LINKER/LOCATOR V05.01.27,  INVOKED BY:
+LX51 q:\robo\oficial\headers\d1000_api.OBJ , q:\robo\oficial\headers\d1000_api.DTP TO(q:\robo\ofi&
+cial\headers\d1000_api.AOF) PR(q:\robo\oficial\headers\d1000_api.m51) XSIZE(65536) CSIZE(65536) R&
+S(256) RSI(128) IX MAP  WITHOUT ANY FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED
+  Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ(D1000_API)
+  Q:\ROBO\OFICIAL\HEADERS\D1000_API.DTP(_WKRDTP_)
+  c:\RIDE\Lib\RC51L.LIB(MULS)
+  c:\RIDE\Lib\RC51L.LIB(CMPL)
+  c:\RIDE\Lib\RC51L.LIB(RSTSTK4)
+
+
+LINK MAP OF MODULE: Q:\ROBO\OFICIAL\HEADERS\D1000_API.AOF (D1000_API)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA/IDATA    M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+    DATA     0008H      000CH     UNIT           ?DT?D1000_API
+    DATA     0014H      0004H     OVERLAID UNIT  _DGROUP00_
+             0014H      0004H     -------------  ?DT?_waitS?D1000_API
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      005FH     UNIT           ?PR?LIB51
+    CODE     005FH      0054H     UNIT           ?PR?_waitS?D1000_API
+    CODE     00B3H      0001H     UNIT           ?PR?_waitMs?D1000_API
+    CODE     00B4H      0001H     UNIT           ?PR?_waitUs?D1000_API
+    CODE     00B5H      0034H     UNIT           ?PR?delay?D1000_API
+    CODE     00E9H      0043H     UNIT           ?PR?sensorEsquerdo?D1000_API
+    CODE     012CH      0043H     UNIT           ?PR?sensorDireito?D1000_API
+    CODE     016FH      0043H     UNIT           ?PR?sensorFrontal?D1000_API
+    CODE     01B2H      0007H     UNIT           ?PR?_amarelo?D1000_API
+    CODE     01B9H      0007H     UNIT           ?PR?_verde?D1000_API
+    CODE     01C0H      0007H     UNIT           ?PR?_vermelho?D1000_API
+    CODE     01C7H      000DH     UNIT           ?PR?_ligarMotores?D1000_API
+    CODE     01D4H      0013H     UNIT           ?PR?_motorEsquerdo?D1000_API
+    CODE     01E7H      0013H     UNIT           ?PR?_motorDireito?D1000_API
+    CODE     01FAH      0021H     UNIT           ?PR?_mover?D1000_API
+    CODE     021BH      0023H     UNIT           ?PR?_girar?D1000_API
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL RAM storage requirement:  0018H (24)
+    Total EXTERNAL RAM storage requirement:  0000H (0)
+    Total     CODE     storage requirement:  023EH (574)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: Q:\ROBO\OFICIAL\HEADERS\D1000_API.AOF (D1000_API)
+
+SEGMENT                           BI_GROUP            DT_GROUP             ID_GROUP             XD_GROUP
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------
+
+?PR?_waitS?D1000_API           ---------------     0014H    0004H      ---------------     ---------------
+
+?PR?_waitMs?D1000_API          ---------------     ---------------     ---------------     ---------------
+
+?PR?_waitUs?D1000_API          ---------------     ---------------     ---------------     ---------------
+
+?PR?sensorEsquerdo?D1000_API   ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?delay?D1000_API
+
+?PR?delay?D1000_API            ---------------     ---------------     ---------------     ---------------
+
+?PR?sensorDireito?D1000_API    ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?delay?D1000_API
+
+?PR?sensorFrontal?D1000_API    ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?delay?D1000_API
+
+?PR?_amarelo?D1000_API         ---------------     ---------------     ---------------     ---------------
+
+?PR?_verde?D1000_API           ---------------     ---------------     ---------------     ---------------
+
+?PR?_vermelho?D1000_API        ---------------     ---------------     ---------------     ---------------
+
+?PR?_ligarMotores?D1000_API    ---------------     ---------------     ---------------     ---------------
+
+?PR?_mover?D1000_API           ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_motorDireito?D1000_API
+  +--> ?PR?_motorEsquerdo?D1000_API
+
+?PR?_motorDireito?D1000_API    ---------------     ---------------     ---------------     ---------------
+
+?PR?_motorEsquerdo?D1000_API   ---------------     ---------------     ---------------     ---------------
+
+?PR?_girar?D1000_API           ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_motorDireito?D1000_API
+  +--> ?PR?_motorEsquerdo?D1000_API
+
+SYMBOL TABLE FOR Q:\ROBO\OFICIAL\HEADERS\D1000_API.AOF(D1000_API)
+------------------------------------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+	-------            MODULE             d1000_api
+	C:0000H            SYMBOL             _ICE_DUMMY_
+	C:021BH            PUBLIC             _girar
+	C:01FAH            PUBLIC             _mover
+	C:01E7H            PUBLIC             _motorDireito
+	C:01D4H            PUBLIC             _motorEsquerdo
+	C:01C7H            PUBLIC             _ligarMotores
+	C:01C0H            PUBLIC             _vermelho
+	C:01B9H            PUBLIC             _verde
+	C:01B2H            PUBLIC             _amarelo
+	C:016FH            PUBLIC             sensorFrontal
+	C:012CH            PUBLIC             sensorDireito
+	C:00E9H            PUBLIC             sensorEsquerdo
+	C:00B5H            PUBLIC             delay
+	C:00B4H            PUBLIC             _waitUs
+	C:00B3H            PUBLIC             _waitMs
+	C:005FH            PUBLIC             _waitS
+	B:00A0H            SYMBOL             trigger
+	D:0010H            PUBLIC             sen_dir
+	D:000CH            PUBLIC             sen_fro
+	D:0008H            PUBLIC             sen_esq
+	B:00A3H            SYMBOL             eco_dir
+	B:00A2H            SYMBOL             eco_fro
+	B:00A7H            SYMBOL             eco_esq
+	B:00B5H            SYMBOL             motor2
+	B:00B3H            SYMBOL             motor1
+	B:00B7H            SYMBOL             motor2_2
+	B:00B6H            SYMBOL             motor2_1
+	B:00B4H            SYMBOL             motor1_2
+	B:00B3H            SYMBOL             motor1_1
+	B:0092H            SYMBOL             LED_VD
+	B:0091H            SYMBOL             LED_AM
+	B:0090H            SYMBOL             LED_VM
+	B:00C8H            SYMBOL             CP_RL2
+	B:00C9H            SYMBOL             C_T2
+	B:00CAH            SYMBOL             TR2
+	B:00CBH            SYMBOL             EXEN2
+	B:00CCH            SYMBOL             TCLK
+	B:00CDH            SYMBOL             RCLK
+	B:00CEH            SYMBOL             EXF2
+	B:00CFH            SYMBOL             TF2
+	B:0090H            SYMBOL             T2
+	B:0091H            SYMBOL             T2EX
+	B:00BDH            SYMBOL             PT2
+	B:00ADH            SYMBOL             ET2
+	B:0098H            SYMBOL             RI
+	B:0099H            SYMBOL             TI
+	B:009AH            SYMBOL             RB8
+	B:009BH            SYMBOL             TB8
+	B:009CH            SYMBOL             REN
+	B:009DH            SYMBOL             SM2
+	B:009EH            SYMBOL             SM1
+	B:009FH            SYMBOL             SM0
+	B:00B0H            SYMBOL             RXD
+	B:00B1H            SYMBOL             TXD
+	B:00B2H            SYMBOL             INT0
+	B:00B3H            SYMBOL             INT1
+	B:00B4H            SYMBOL             T0
+	B:00B5H            SYMBOL             T1
+	B:00B6H            SYMBOL             WR
+	B:00B7H            SYMBOL             RD
+	B:00B8H            SYMBOL             PX0
+	B:00B9H            SYMBOL             PT0
+	B:00BAH            SYMBOL             PX1
+	B:00BBH            SYMBOL             PT1
+	B:00BCH            SYMBOL             PS
+	B:00A8H            SYMBOL             EX0
+	B:00A9H            SYMBOL             ET0
+	B:00AAH            SYMBOL             EX1
+	B:00ABH            SYMBOL             ET1
+	B:00ACH            SYMBOL             ES
+	B:00AFH            SYMBOL             EA
+	B:0088H            SYMBOL             IT0
+	B:0089H            SYMBOL             IE0
+	B:008AH            SYMBOL             IT1
+	B:008BH            SYMBOL             IE1
+	B:008CH            SYMBOL             TR0
+	B:008DH            SYMBOL             TF0
+	B:008EH            SYMBOL             TR1
+	B:008FH            SYMBOL             TF1
+	B:00D0H            SYMBOL             P
+	B:00D1H            SYMBOL             F1
+	B:00D2H            SYMBOL             OV
+	B:00D3H            SYMBOL             RS0
+	B:00D4H            SYMBOL             RS1
+	B:00D5H            SYMBOL             F0
+	B:00D6H            SYMBOL             AC
+	B:00D7H            SYMBOL             CY
+	D:00CDH            SYMBOL             TH2
+	D:00CCH            SYMBOL             TL2
+	D:00CBH            SYMBOL             RCAP2H
+	D:00CAH            SYMBOL             RCAP2L
+	D:00C8H            SYMBOL             T2CON
+	D:0099H            SYMBOL             SBUF
+	D:0098H            SYMBOL             SCON
+	D:00B8H            SYMBOL             IP
+	D:00A8H            SYMBOL             IE
+	D:008DH            SYMBOL             TH1
+	D:008CH            SYMBOL             TH0
+	D:008BH            SYMBOL             TL1
+	D:008AH            SYMBOL             TL0
+	D:0089H            SYMBOL             TMOD
+	D:0088H            SYMBOL             TCON
+	D:0087H            SYMBOL             PCON
+	D:0083H            SYMBOL             DPH
+	D:0082H            SYMBOL             DPL
+	D:0081H            SYMBOL             SP
+	D:00F0H            SYMBOL             B
+	D:00E0H            SYMBOL             ACC
+	D:00D0H            SYMBOL             PSW
+	D:00B0H            SYMBOL             P3
+	D:00A0H            SYMBOL             P2
+	D:0090H            SYMBOL             P1
+	D:0080H            SYMBOL             P0
+	-------            PROC               _waitS
+	D:0014H            SYMBOL             i
+	D:0016H            SYMBOL             j
+	C:005FH            LINE#              8
+	C:005FH            LINE#              8
+	C:0063H            LINE#              12
+	C:0066H            LINE#              13
+	C:0069H            LINE#              14
+	C:006CH            LINE#              15
+	C:006EH            LINE#              17
+	C:0073H            LINE#              19
+	C:0078H            LINE#              20
+	C:0096H            LINE#              22
+	C:0099H            LINE#              23
+	C:009CH            LINE#              24
+	C:009FH            LINE#              25
+	C:00A1H            LINE#              26
+	C:00ABH            LINE#              17
+	C:00B2H            LINE#              30
+	C:00B2H            LINE#              30
+	-------            ENDPROC            _waitS
+	-------            PROC               _waitMs
+	C:00B3H            LINE#              32
+	C:00B3H            LINE#              32
+	C:00B3H            LINE#              34
+	C:00B3H            LINE#              34
+	-------            ENDPROC            _waitMs
+	-------            PROC               _waitUs
+	C:00B4H            LINE#              36
+	C:00B4H            LINE#              36
+	C:00B4H            LINE#              38
+	C:00B4H            LINE#              38
+	-------            ENDPROC            _waitUs
+	-------            PROC               delay
+	C:00B5H            LINE#              45
+	C:00B5H            LINE#              45
+	C:00B5H            LINE#              49
+	C:00B8H            LINE#              50
+	C:00BBH            LINE#              51
+	C:00BEH            LINE#              52
+	C:00C0H            LINE#              54
+	C:00C3H            LINE#              56
+	C:00C6H            LINE#              57
+	C:00D2H            LINE#              59
+	C:00D5H            LINE#              60
+	C:00D8H            LINE#              61
+	C:00DBH            LINE#              62
+	C:00DDH            LINE#              63
+	C:00E4H            LINE#              54
+	C:00E8H            LINE#              66
+	C:00E8H            LINE#              66
+	-------            ENDPROC            delay
+	-------            PROC               sensorEsquerdo
+	C:00E9H            LINE#              8
+	C:00E9H            LINE#              8
+	C:00E9H            LINE#              13
+	C:00EBH            LINE#              14
+	C:00EEH            LINE#              16
+	C:00F0H            LINE#              18
+	C:00F9H            LINE#              19
+	C:00FEH            LINE#              20
+	C:012BH            LINE#              24
+	C:012BH            LINE#              24
+	-------            ENDPROC            sensorEsquerdo
+	-------            PROC               sensorDireito
+	C:012CH            LINE#              27
+	C:012CH            LINE#              27
+	C:012CH            LINE#              32
+	C:012EH            LINE#              33
+	C:0131H            LINE#              35
+	C:0133H            LINE#              37
+	C:013CH            LINE#              38
+	C:0141H            LINE#              39
+	C:016EH            LINE#              44
+	C:016EH            LINE#              44
+	-------            ENDPROC            sensorDireito
+	-------            PROC               sensorFrontal
+	C:016FH            LINE#              47
+	C:016FH            LINE#              47
+	C:016FH            LINE#              52
+	C:0171H            LINE#              53
+	C:0174H            LINE#              55
+	C:0176H            LINE#              57
+	C:017FH            LINE#              58
+	C:0184H            LINE#              59
+	C:01B1H            LINE#              63
+	C:01B1H            LINE#              63
+	-------            ENDPROC            sensorFrontal
+	-------            PROC               _amarelo
+	C:01B2H            LINE#              7
+	C:01B2H            LINE#              7
+	C:01B2H            LINE#              8
+	C:01B8H            LINE#              9
+	C:01B8H            LINE#              9
+	-------            ENDPROC            _amarelo
+	-------            PROC               _verde
+	C:01B9H            LINE#              11
+	C:01B9H            LINE#              11
+	C:01B9H            LINE#              12
+	C:01BFH            LINE#              13
+	C:01BFH            LINE#              13
+	-------            ENDPROC            _verde
+	-------            PROC               _vermelho
+	C:01C0H            LINE#              15
+	C:01C0H            LINE#              15
+	C:01C0H            LINE#              16
+	C:01C6H            LINE#              17
+	C:01C6H            LINE#              17
+	-------            ENDPROC            _vermelho
+	-------            PROC               _ligarMotores
+	C:01C7H            LINE#              8
+	C:01C7H            LINE#              8
+	C:01C7H            LINE#              9
+	C:01CAH            LINE#              10
+	C:01CCH            LINE#              11
+	C:01CFH            LINE#              13
+	C:01D1H            LINE#              14
+	C:01D3H            LINE#              16
+	C:01D3H            LINE#              16
+	-------            ENDPROC            _ligarMotores
+	-------            PROC               _motorEsquerdo
+	C:01D4H            LINE#              18
+	C:01D4H            LINE#              18
+	C:01D4H            LINE#              19
+	C:01DDH            LINE#              22
+	C:01DFH            LINE#              23
+	C:01E1H            LINE#              24
+	C:01E2H            LINE#              26
+	C:01E4H            LINE#              27
+	C:01E6H            LINE#              30
+	C:01E6H            LINE#              30
+	-------            ENDPROC            _motorEsquerdo
+	-------            PROC               _motorDireito
+	C:01E7H            LINE#              32
+	C:01E7H            LINE#              32
+	C:01E7H            LINE#              33
+	C:01F0H            LINE#              36
+	C:01F2H            LINE#              37
+	C:01F4H            LINE#              38
+	C:01F5H            LINE#              40
+	C:01F7H            LINE#              41
+	C:01F9H            LINE#              44
+	C:01F9H            LINE#              44
+	-------            ENDPROC            _motorDireito
+	-------            PROC               _mover
+	C:01FAH            LINE#              1
+	C:01FAH            LINE#              1
+	C:01FCH            LINE#              3
+	C:0206H            LINE#              5
+	C:020DH            LINE#              6
+	C:0210H            LINE#              7
+	C:0211H            LINE#              9
+	C:0217H            LINE#              10
+	C:021AH            LINE#              15
+	C:021AH            LINE#              15
+	-------            ENDPROC            _mover
+	-------            PROC               _girar
+	C:021BH            LINE#              16
+	C:021BH            LINE#              16
+	C:021DH            LINE#              18
+	C:0226H            LINE#              21
+	C:022CH            LINE#              22
+	C:0230H            LINE#              23
+	C:0231H            LINE#              25
+	C:0238H            LINE#              26
+	C:023DH            LINE#              31
+	C:023DH            LINE#              31
+	-------            ENDPROC            _girar
+	-------            ENDMOD             d1000_api
+	N:00E8H            PUBLIC             TIM1_INIT
+	N:0010H            PUBLIC             SIZEBUFPRINTF
+	N:0100H            PUBLIC             XSTACKLEN
+	N:0001H            PUBLIC             _EXTSTK_DUMMY_
+	C:0000H            PUBLIC             ?C_IMULX
+	C:0005H            PUBLIC             ?C_IMUL
+	C:0019H            PUBLIC             ?C_CMPLS
+	C:0028H            PUBLIC             ?C_CMPL
+	C:0050H            PUBLIC             RST_STK4?C
+
+UNCALLED SEGMENTS:
+------------------
+    ?PR?sensorDireito?D1000_API: Function sensorDireito in file Q:\ROBO\OFICIAL\HEADERS\D1000_API&
+.OBJ was not called
+    ?PR?sensorEsquerdo?D1000_API: Function sensorEsquerdo in file Q:\ROBO\OFICIAL\HEADERS\D1000_A&
+PI.OBJ was not called
+    ?PR?sensorFrontal?D1000_API: Function sensorFrontal in file Q:\ROBO\OFICIAL\HEADERS\D1000_API&
+.OBJ was not called
+    ?PR?_amarelo?D1000_API: Function _amarelo in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was n&
+ot called
+    ?PR?_girar?D1000_API: Function _girar in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not c&
+alled
+    ?PR?_ligarMotores?D1000_API: Function _ligarMotores in file Q:\ROBO\OFICIAL\HEADERS\D1000_API&
+.OBJ was not called
+    ?PR?_mover?D1000_API: Function _mover in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not c&
+alled
+    ?PR?_verde?D1000_API: Function _verde in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not c&
+alled
+    ?PR?_vermelho?D1000_API: Function _vermelho in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was&
+ not called
+    ?PR?_waitMs?D1000_API: Function _waitMs in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not&
+ called
+    ?PR?_waitS?D1000_API: Function _waitS in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not c&
+alled
+    ?PR?_waitUs?D1000_API: Function _waitUs in file Q:\ROBO\OFICIAL\HEADERS\D1000_API.OBJ was not&
+ called
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.
+

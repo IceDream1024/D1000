@@ -1,0 +1,83 @@
+RC51 COMPILER V03.03.40,  DELAY                   09/30/13  21:39:56  PAGE  1
+
+QCW(0x00002F32)
+
+WIN32 RC51 COMPILER V03.03.40, COMPILATION OF MODULE DELAY     
+OBJECT MODULE PLACED IN q:\robo\oficial\headers\delay.obj
+COMPILER INVOKED BY: RC51.EXE Q:\ROBO\OFICIAL\HEADERS\DELAY.H OBJECT(Q:\ROBO\OFI
+            -CIAL\HEADERS\DELAY.OBJ) PIN(C:\RIDE\INC;C:\RIDE\INC\51) PIN(C:\RIDE
+            -\INC\51\) NOAM PR(Q:\ROBO\OFICIAL\HEADERS\DELAY.LST) CD SB OE(1) SM
+            - FP(NOFLOAT) PW(80) NOIS UNSIGNEDCHAR ET(CHAR) 
+
+stmt level    source
+   1          //Função básica para contagem de tempo (atraso) de 1s
+   2          // (j<=100) criar delay de 1s.
+   3          // (j<=5) cria delay de 10us.
+   4          void delay(int j)			//
+   5          {  
+   6   1      int i; 
+   7   1      if( j == 0)
+   8   1          j = 5;
+   9   1                                  //
+  10   1                        //
+  11   1                                 //
+  12   1      	TMOD = 0x01;            //
+
+ERROR C014 IN LINE 12 OF delay.h : Undefined 'TMOD'
+  13   1      	TH0 = 0xDC;             //
+
+ERROR C014 IN LINE 13 OF delay.h : Undefined 'TH0'
+  14   1      	TL0 = 0x00;             //
+
+ERROR C014 IN LINE 14 OF delay.h : Undefined 'TL0'
+  15   1      	TR0 = 1;                //
+
+ERROR C014 IN LINE 15 OF delay.h : Undefined 'TR0'
+  16   1                                 //
+  17   1        for(i=0;i<1;i++)			//Ajusta o tempo em segundos
+  18   1        {                        //
+  19   2            j = 0;               //
+  20   2            while(j<=5)			//Ajusta o tempo em centésimos de segundos x i
+            -
+  21   2            {							//
+  22   3                while(!TF0);     //
+
+ERROR C014 IN LINE 22 OF delay.h : Undefined 'TF0'
+  23   3                TH0=0xDC;        //
+
+ERROR C014 IN LINE 23 OF delay.h : Undefined 'TH0'
+  24   3                TL0=0x00;        //
+
+ERROR C014 IN LINE 24 OF delay.h : Undefined 'TL0'
+  25   3                TF0=0;           //
+
+ERROR C014 IN LINE 25 OF delay.h : Undefined 'TF0'
+  26   3                j++;             //
+  27   3            }                    //
+  28   2         }								//
+  29   1      }	
+  30          
+RC51 COMPILER V03.03.40,  DELAY                   09/30/13  21:39:56  PAGE  2
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+RC51 COMPILER V03.03.40,  DELAY                   09/30/13  21:39:56  PAGE  3
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+RC51 COMPILER V03.03.40,  DELAY                   09/30/13  21:39:56  PAGE  4
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+RC51 COMPILATION COMPLETE.  0 WARNING,  8 ERRORS

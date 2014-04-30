@@ -1,0 +1,120 @@
+RC51 COMPILER V03.03.40,  MOTOR                   09/30/13  21:12:38  PAGE  1
+
+QCW(0x00002F32)
+
+WIN32 RC51 COMPILER V03.03.40, COMPILATION OF MODULE MOTOR     
+OBJECT MODULE PLACED IN q:\robo\oficial\headers\motor.obj
+COMPILER INVOKED BY: RC51.EXE Q:\ROBO\OFICIAL\HEADERS\MOTOR.H OBJECT(Q:\ROBO\OFI
+            -CIAL\HEADERS\MOTOR.OBJ) PIN(C:\RIDE\INC;C:\RIDE\INC\51) PIN(C:\RIDE
+            -\INC\51\) NOAM PR(Q:\ROBO\OFICIAL\HEADERS\MOTOR.LST) CD SB OE(1) SM
+            - FP(NOFLOAT) PW(80) NOIS UNSIGNEDCHAR ET(CHAR) 
+
+stmt level    source
+   1          /*************************************************
+   2          
+   3          	Controle dos motores
+   4          
+   5          *************************************************/
+   6          
+   7          //Nivel baixo
+   8          void ligarMotores(char sinal){
+   9   1      	if( sinal != 0 ){	
+  10   2      		motor1 = 1;
+
+ERROR C014 IN LINE 10 OF motor.h : Undefined 'motor1'
+  11   2      		motor2 = 1;
+
+ERROR C014 IN LINE 11 OF motor.h : Undefined 'motor2'
+  12   2      	}else{
+  13   2      		motor1 = 0;
+
+ERROR C014 IN LINE 13 OF motor.h : Undefined 'motor1'
+  14   2      		motor2 = 0;
+
+ERROR C014 IN LINE 14 OF motor.h : Undefined 'motor2'
+  15   2      	}
+  16   1      }
+  17          
+  18          void parar(){
+  19   1        motor1_1 = 0;
+
+ERROR C014 IN LINE 19 OF motor.h : Undefined 'motor1_1'
+  20   1        motor1_2 = 0;
+
+ERROR C014 IN LINE 20 OF motor.h : Undefined 'motor1_2'
+  21   1        motor2_1 = 0;
+
+ERROR C014 IN LINE 21 OF motor.h : Undefined 'motor2_1'
+  22   1        motor2_2 = 0;
+
+ERROR C014 IN LINE 22 OF motor.h : Undefined 'motor2_2'
+  23   1      }
+  24          
+  25          void motorEsquerdo(int port){
+  26   1          switch(port){
+  27   2          	  //para frente
+  28   2              case 1:
+  29   2                  motor1_1 = 0;
+
+ERROR C014 IN LINE 29 OF motor.h : Undefined 'motor1_1'
+  30   2                  motor1_2 = 1;
+
+ERROR C014 IN LINE 30 OF motor.h : Undefined 'motor1_2'
+  31   2                  break;
+  32   2              default:
+  33   2                  motor1_1 = 1;
+
+ERROR C014 IN LINE 33 OF motor.h : Undefined 'motor1_1'
+  34   2                  motor1_2 = 0;
+
+ERROR C014 IN LINE 34 OF motor.h : Undefined 'motor1_2'
+  35   2                  break;
+  36   2          }
+  37   1      }
+  38          
+  39          void motorDireito(int port){
+  40   1          switch(port){
+  41   2          	  //para frente
+  42   2              case 1:
+  43   2                  motor2_1 = 1;
+
+ERROR C014 IN LINE 43 OF motor.h : Undefined 'motor2_1'
+  44   2                  motor2_2 = 0;
+
+ERROR C014 IN LINE 44 OF motor.h : Undefined 'motor2_2'
+  45   2                  break;
+  46   2              default:
+  47   2                  motor2_1 = 0;
+
+ERROR C014 IN LINE 47 OF motor.h : Undefined 'motor2_1'
+  48   2                  motor2_2 = 1;
+
+ERROR C014 IN LINE 48 OF motor.h : Undefined 'motor2_2'
+  49   2                  break;
+  50   2          }
+  51   1      }
+  52          
+RC51 COMPILER V03.03.40,  MOTOR                   09/30/13  21:12:38  PAGE  2
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+RC51 COMPILER V03.03.40,  MOTOR                   09/30/13  21:12:38  PAGE  3
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+RC51 COMPILER V03.03.40,  MOTOR                   09/30/13  21:12:38  PAGE  4
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+RC51 COMPILATION COMPLETE.  0 WARNING, 16 ERRORS
